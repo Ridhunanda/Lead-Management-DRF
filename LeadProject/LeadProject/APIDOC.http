@@ -1,0 +1,83 @@
+# API call for lead create
+###
+POST http://127.0.0.1:8000/lead
+Content-Type: application/json
+Authorization: Basic ridhu:password@123
+
+{
+    "name":"Saru",
+    "phone":9048584608,
+    "email":"saru@gmail.com",
+    "course":"Python fullstack",
+    "source":"Call",
+    "status":"Contacted",
+    "notes":"Morning batch preferred"
+}
+
+# API call for list all lead
+###
+GET http://127.0.0.1:8000/lead
+Authorization: Basic ridhu:password@123
+
+# API call for lead detail view
+###
+GET http://127.0.0.1:8000/lead/detail/1
+Authorization: Basic ridhu:password@123
+
+# API call for update a lead data
+###
+PUT  http://127.0.0.1:8000/lead/detail/1
+Content-Type: application/json
+Authorization: Basic ridhu:password@123
+
+{
+  "id": 1,
+  "name": "Kichu",
+  "phone": "9048584601",
+  "email": "kichu@gmail.com",
+  "course": "Python fullstack",
+  "source": "Website",
+  "status": "Contacted",
+  "added_date": "2026-10-15T05:56:50.968682Z",
+  "notes": "Evening batch preferred"
+}
+
+# API call for delete a lead data
+###
+DELETE   http://127.0.0.1:8000/lead/detail/2
+Authorization: Basic ridhu:password@123
+
+# # API call for lead filter by source
+# ###
+# GET http://127.0.0.1:8000/lead/source_list
+# Authorization: Basic ridhu:password@123
+
+# # API call for lead filter by status
+# ###
+# GET http://127.0.0.1:8000/lead/status_list
+# Authorization: Basic ridhu:password@123
+
+# API call for ordering leads based on added date ascending
+###
+GET http://127.0.0.1:8000/lead?ordering=added_date
+Authorization: Basic ridhu:password@123
+
+# API call for ordering leads based on added date in descending order
+###
+GET http://127.0.0.1:8000/lead?ordering=-added_date
+Authorization: Basic ridhu:password@123
+
+# API call for lead filter by status
+###
+GET http://127.0.0.1:8000/lead?search=New
+Authorization: Basic ridhu:password@123
+
+# API call for lead filter by status
+###
+GET http://127.0.0.1:8000/lead?source=Website&status=New
+Authorization: Basic ridhu:password@123
+
+# API call for lead filter by status
+###
+GET http://127.0.0.1:8000/lead?search=New Website
+Authorization: Basic ridhu:password@123
